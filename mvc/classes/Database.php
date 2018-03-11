@@ -18,6 +18,11 @@ class Database {
 
   public static function query($query, $params = array()) {
 
+      // remove these statements
+      echo $query;
+      echo "<br>";
+      echo $params;
+
     $stmt = self::con()->prepare($query);
     $stmt->execute($params);
     $data = $stmt->fetchAll();
@@ -26,19 +31,16 @@ class Database {
 
     public static function insert($ins, $params = array()) {
         echo $ins;
-        //echo $params;
+        echo $params;
+        $arrlength = count($params);
+        echo $arrlength;
         echo " Testing output:<br>";
 
-        $username = "Romeo";
-        $password = "test";
-
-         $sql = "INSERT INTO users (name, password, role)
-    VALUES (`John`, `Doe`, `john@example.com`)";
 
         $stmt = self::con()->prepare($ins);
-        //$stmt->execute($params);
-        //$stmt->execute($sql);
-        $stmt->execute( array( ':username'=>$name, ':password'=>$password));
+        $stmt->execute($params);
+
+    //$stmt->execute( array( ':username'=>$name, ':password'=>$password));
 
         $data = $stmt->fetchAll();
     return $data;
