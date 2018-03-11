@@ -40,10 +40,14 @@ class Database {
         $stmt = self::con()->prepare($ins);
         $stmt->execute($params);
 
+        // Confirmation about added record
+
+        echo "<h4>New record has been added: ".$ins."</h4>";
+
     //$stmt->execute( array( ':username'=>$name, ':password'=>$password));
 
-        $data = $stmt->fetchAll();
-    return $data;
+    //$data = $stmt->fetchAll();
+    //return $data;
 
 
     }

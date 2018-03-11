@@ -37,5 +37,16 @@ Route::set('newUser', function() {
     User::addUser($_POST["userName"], $_POST["password"]);
 });
 
+// Adding new work order
+
+Route::set('addWorkorder', function() {
+
+    Workorder::CreateView('AddWorkorder');
+
+});
+Route::set('newWorkorder', function() {
+
+    Workorder::addWorkorder($_POST["description"], $_POST["estimate"], $_POST["location"], $_POST["received"], $_POST["scheduled"], $_POST["compleated"], $_POST["location_id"]);
+});
 
 ?>
