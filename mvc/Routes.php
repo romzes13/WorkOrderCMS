@@ -16,4 +16,26 @@ Route::set('contact-us', function() {
 Route::set('test', function() {
     echo "test";
 });
+
+// Adding new user
+Route::set('user', function() {
+    User::listUsers();
+    //User::addUser();
+});
+
+Route::set('addUser', function() {
+    //User::listUsers();
+    User::CreateView('AddUser');
+    //User::addUser();
+});
+
+Route::set('newUser', function() {
+    //User::listUsers();
+    //$_POST["userName"];
+
+    //User::CreateView('AddUser');
+    User::addUser($_POST["userName"], $_POST["password"]);
+});
+
+
 ?>
