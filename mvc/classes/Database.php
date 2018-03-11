@@ -3,7 +3,8 @@
 class Database {
 
     public static $host = "127.0.0.1";
-    public static $dbName = "handyman";
+    //public static $dbName = "handyman";
+    public static $dbName = "workorder";
     public static $userName = "root";
     public static $password = "1982";
 
@@ -22,6 +23,28 @@ class Database {
     $data = $stmt->fetchAll();
     return $data;
   }
+
+    public static function insert($ins, $params = array()) {
+        echo $ins;
+        //echo $params;
+        echo " Testing output:<br>";
+
+        $username = "Romeo";
+        $password = "test";
+
+         $sql = "INSERT INTO users (name, password, role)
+    VALUES (`John`, `Doe`, `john@example.com`)";
+
+        $stmt = self::con()->prepare($ins);
+        //$stmt->execute($params);
+        //$stmt->execute($sql);
+        $stmt->execute( array( ':username'=>$name, ':password'=>$password));
+
+        $data = $stmt->fetchAll();
+    return $data;
+
+
+    }
 }
 
 ?>
