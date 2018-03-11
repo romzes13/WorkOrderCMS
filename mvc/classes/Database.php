@@ -3,7 +3,8 @@
 class Database {
 
     public static $host = "127.0.0.1";
-    public static $dbName = "handyman";
+    //public static $dbName = "handyman";
+    public static $dbName = "workorder";
     public static $userName = "root";
     public static $password = "1982";
 
@@ -17,11 +18,35 @@ class Database {
 
   public static function query($query, $params = array()) {
 
+      // remove these statements
+      echo $query;
+      echo "<br>";
+      echo $params;
+
     $stmt = self::con()->prepare($query);
     $stmt->execute($params);
     $data = $stmt->fetchAll();
     return $data;
   }
+
+    public static function insert($ins, $params = array()) {
+        echo $ins;
+        echo $params;
+        $arrlength = count($params);
+        echo $arrlength;
+        echo " Testing output:<br>";
+
+
+        $stmt = self::con()->prepare($ins);
+        $stmt->execute($params);
+
+    //$stmt->execute( array( ':username'=>$name, ':password'=>$password));
+
+        $data = $stmt->fetchAll();
+    return $data;
+
+
+    }
 }
 
 ?>
