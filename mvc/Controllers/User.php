@@ -16,12 +16,14 @@ class User extends Controller {
         echo "password: ".$password;
         echo "<br>";
 
+        //TODO Add security and validate input
+
 $sql ="INSERT INTO users (name, password) VALUES ('$name', '$password')";
         self::insert($sql);
 
-        echo $sql;
+        //echo $sql;
 
-        //$query = $db->prepare( $sql );
+   //$query = $db->prepare( $sql );
    // $query->execute( array( ':username'=>$name, ':password'=>$password));
 
 
