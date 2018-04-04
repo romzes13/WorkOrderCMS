@@ -6,7 +6,8 @@ Route::set('index.php', function() {
 
 Route::set('about-us', function() {
     AboutUs::CreateView('AboutUs');
-    AboutUs::test();
+   // AboutUs::test();
+    AboutUs::printUsers();
 });
 
 Route::set('contact-us', function() {
@@ -19,13 +20,13 @@ Route::set('test', function() {
 
 // Adding new user
 Route::set('user', function() {
-    User::listUsers();
+    UserImpl::listUsers();
     //User::addUser();
 });
 
 Route::set('addUser', function() {
     //User::listUsers();
-    User::CreateView('AddUser');
+    UserImpl::CreateView('AddUser');
     //User::addUser();
 });
 
@@ -34,7 +35,7 @@ Route::set('newUser', function() {
     //$_POST["userName"];
 
     //User::CreateView('AddUser');
-    User::addUser($_POST["userName"], $_POST["password"]);
+    UserImpl::addUser($_POST["userName"], $_POST["password"]);
 });
 
 // Adding new work order
