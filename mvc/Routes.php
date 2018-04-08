@@ -34,20 +34,81 @@ Route::set('newUser', function() {
     //User::listUsers();
     //$_POST["userName"];
 
-    //User::CreateView('AddUser');
-    UserImpl::addUser($_POST["userName"], $_POST["password"]);
+    //This method prints extra confirmation
+UserImpl::addUser($_POST["userName"], $_POST["password"], $_POST["role"]);
+    UserImpl::CreateView('newUser');
 });
 
 // Adding new work order
 
 Route::set('addWorkorder', function() {
 
-    Workorder::CreateView('AddWorkorder');
+    WorkorderImpl::CreateView('AddWorkorder');
 
 });
 Route::set('newWorkorder', function() {
 
-    Workorder::addWorkorder($_POST["description"], $_POST["estimate"], $_POST["location"], $_POST["received"], $_POST["scheduled"], $_POST["compleated"], $_POST["location_id"]);
+    WorkorderImpl::addWorkorder($_POST["description"], $_POST["estimate"], $_POST["location"], $_POST["received"], $_POST["scheduled"], $_POST["compleated"], $_POST["location_id"]);
+
+    WorkorderImpl::CreateView('newWorkorder');
 });
+
+// Display all work orders
+
+Route::set('listWorkorders', function() {
+
+    WorkorderImpl::CreateView('ShowWorkorders');
+
+});
+
+// Basic authentication
+Route::set('login', function() {
+
+    LoginImpl::CreateView('LoginView');
+
+});
+
+// Authorization
+Route::set('loginAuth', function() {
+
+    LoginImpl::loginAuth($_POST["userName"], $_POST["password"]);
+
+});
+
+// Log out
+Route::set('logout', function() {
+
+    LoginImpl::logoutSession();
+
+});
+
+// Test authentication
+Route::set('loginTest', function() {
+
+    //LoginImpl::loginTest();
+    LoginImpl::CreateView('session_test');
+
+
+});
+
+// Dashboard
+Route::set('dashboard', function() {
+
+    LoginImpl::CreateView('Dashboard');
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ?>

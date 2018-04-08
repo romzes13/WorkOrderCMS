@@ -13,7 +13,7 @@
 
 <body>
     <div id="wrapper">
-<header><h2>User registration page</h2></header>
+<header><h2>User login page</h2></header>
 
 <nav>
     <b>
@@ -28,11 +28,11 @@
         <h4>* Required fields</h4>
 
     <!-- Form for Help -->
-<form action="newUser" method="post">
+<form action="loginAuth" method="post">
             <!-- form controlls -->
 
 <fieldset>
-    <legend>Name and password</legend>
+    <legend>Enter   name and password</legend>
 <div >
 <label id="label1">Name:</label><input name="userName" type="text" >
 <h8>*</h8><h8 id="errorName" class="error"></h8>
@@ -40,16 +40,7 @@
 <label id="label1">Password: </label><input name="password" type="text" > *
 <h8 id="errorPassw" class="error"></h8>
 
-<label id="label1">Role: </label><br>
 
-    <select id="custom" name="role">
-
-            <option value="admin" >Admin</option>
-            <option value="contractor" >Contractor</option>
-            <option value="dispatcher" >Dispatcher</option>
-            <option value="client" >Client</option>
-
-  </select>
 </div>
 </fieldset>
 

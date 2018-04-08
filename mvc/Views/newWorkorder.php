@@ -11,7 +11,7 @@
 
 <body>
     <div id="wrapper">
-<header><h2>User registration page</h2></header>
+<header><h2>Workorder page</h2></header>
 
 <nav>
     <b>
@@ -24,19 +24,25 @@
 
 
 
-        <h4>You have been succesfully registred!</h4>
+        <h4>Your service request has been succesfully submitted!</h4>
 
     <!-- Form for Help -->
 <form >
             <!-- form controlls -->
 
 <fieldset>
-    <legend>Name and password</legend>
+    <legend>Workorder details</legend>
 <div id="label00">
-<label>Name: <?php echo $_POST["userName"]; ?></label><br>
 
-<label>Password: <?php echo $_POST["password"]; ?></label><br>
-<label >Role: <?php echo $_POST["role"]; ?></label>
+<label>Description: <?php echo $_POST["description"]; ?></label><br>
+<label>Estimate: <?php echo $_POST["estimate"]; ?></label><br>
+<label >Location: <?php echo $_POST["location"]; ?></label><br>
+<label >Received: <?php echo $_POST["received"]; ?></label><br>
+<label >Scheduled: <?php echo $_POST["scheduled"]; ?></label><br>
+<label >Compleated: <?php echo $_POST["compleated"]; ?></label><br>
+<label >Location_id: <?php echo $_POST["location_id"]; ?></label><br>
+
+
 </div>
 
 </fieldset>
