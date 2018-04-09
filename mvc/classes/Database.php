@@ -51,6 +51,21 @@ class Database {
 
 
     }
+
+        public static function delete($ins, $params = array()) {
+
+        $arrlength = count($params);
+        $stmt = self::con()->prepare($ins);
+        $stmt->execute($params);
+
+        // Confirmation about deleted record
+
+        echo "<h4>Record has been deleted: ".$ins."</h4>";
+
+
+
+
+    }
 }
 
 ?>
