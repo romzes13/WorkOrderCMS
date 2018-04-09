@@ -16,7 +16,10 @@
 </head>
 
 <body>
-    <header><h2>Dashboard::</h2></header>
+    <div id="wrapper">
+
+        <header><h2>Dashboard::</h2></header>
+
     <?php
         // Check session first
         if (!isset($_SESSION['name'])) {
@@ -33,26 +36,24 @@
      if ($_SESSION['role'] == "dispatcher") {
 
         echo "<h4>Dispatcher</h4>";
-         include 'admin.php';
+         include 'dispatcher_dashboard.php';
     }
 
      if ($_SESSION['role'] == "client") {
 
         echo "<h4>Client</h4>";
+         include 'client_dashboard.php';
+    }
+
+        if ($_SESSION['role'] == "contractor") {
+
+        echo "<h4>Contractor</h4>";
+         include 'contractor_dashboard.php';
     }
 
     ?>
 
 
-    <div id="wrapper">
-
-
-<nav>
-    <b>
-           Add navigation
-    </b>
-
-</nav>
 
     <main>
 
@@ -71,5 +72,6 @@ Session registred for :<?php echo $_SESSION['name'];  ?>  <br>
  <footer> <small>Copyright &copy; 2018 Roman Babushkin</small></footer>
 
 </main>
+        </div>
 </body>
 </html>
