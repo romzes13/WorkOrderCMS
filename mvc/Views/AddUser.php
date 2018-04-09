@@ -1,30 +1,70 @@
-<!doctype html>
-<html>
- <head>
-
-    <title>Add new user::</title>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Workorder CMS</title>
+    <meta charset="utf-8">
+   <!-- <link rel="stylesheet" href="/mvc/CSS/styles.css"> -->
+    <style>
+    <?php include 'CSS/styles.css'; ?>
+    </style>
 
 </head>
+
+
 <body>
+    <div id="wrapper">
+<header><h2>User registration page</h2></header>
+
+<nav>
+    <b>
+
+    </b>
+
+</nav>
+
+    <main>
 
 
-    <form method="post" action="newUser">
-    <label id="first"> First name:</label><br/>
-    <input type="text" name="userName"><br/>
+        <h4>* Required fields</h4>
 
-    <label id="first">Password</label><br/>
-    <input type="password" name="password"><br/>
+    <!-- Form for Help -->
+<form action="newUser" method="post">
+            <!-- form controlls -->
 
-    <label id="first">Role</label><br/>
-    <input type="text" name="role"><br/>
+<fieldset>
+    <legend>Name and password</legend>
+<div >
+<label id="label1">Name:</label><input name="userName" type="text" >
+<h8>*</h8><h8 id="errorName" class="error"></h8>
 
-  <!--  <button type="submit" name="save">save</button>
-    <button type="submit" name="get">get</button>
- -->
-        <input type=submit>
+<label id="label1">Password: </label><input name="password" type="text" > *
+<h8 id="errorPassw" class="error"></h8>
+
+<label id="label1">Role: </label><br>
+
+    <select id="custom" name="role">
+
+            <option value="admin" >Admin</option>
+            <option value="contractor" >Contractor</option>
+            <option value="dispatcher" >Dispatcher</option>
+            <option value="client" >Client</option>
+
+  </select>
+</div>
+</fieldset>
+
+            <div id="custom1">
+
+            <input type=submit>
             <input type=reset>
-    </form>
+             </div>
 
+        </form>
+
+    <br>
+        <footer> <small>Copyright &copy; 2018 Roman Babushkin</small></footer>
+
+        </main>
+</div>
 </body>
 </html>

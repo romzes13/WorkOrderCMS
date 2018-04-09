@@ -10,8 +10,9 @@ class User {
         // checks the session and attempts to authenticate the user
     }
 
-    public function login($name, $password) {
+    public function loginAuth($name, $password) {
         // authenticate the user and start a session for them.
+        //
     }
 
     // Constructor
@@ -25,6 +26,10 @@ class User {
 
     function getUser(){
          echo $this->name ."<br/>";
+      }
+
+    function getName(){
+         echo $this->name;
       }
 
 
