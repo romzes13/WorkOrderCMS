@@ -1,42 +1,79 @@
-<!doctype html>
-<html>
- <head>
-
-    <title>Add new workorder::</title>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Workorder CMS</title>
+    <meta charset="utf-8">
+   <!-- <link rel="stylesheet" href="/mvc/CSS/styles.css"> -->
+    <style>
+    <?php include 'CSS/styles.css'; ?>
+    </style>
 
 </head>
+
+
 <body>
+    <div id="wrapper">
+<header><h2>New workorder</h2></header>
 
-    <form method="post" action="newWorkorder">
+<nav>
+    <b>
 
-    <label id="first"> Description:</label><br/>
+    </b>
+
+</nav>
+
+    <main>
+
+
+        <h4>* Required fields</h4>
+
+    <!-- Form for Help -->
+<form action="newWorkorder" method="post">
+            <!-- form controlls -->
+
+<fieldset>
+    <legend>New service request</legend>
+
+    <label id="label1"> Description:</label>
     <input type="text" name="description"><br/>
 
-    <label id="first">Estimate</label><br/>
+    <label id="label1">Estimate</label>
     <input type="text" name="estimate"><br/>
 
-    <label id="first">Location</label><br/>
+    <label id="label1">Location</label>
     <input type="text" name="location"><br/>
 
-    <label id="first"> Received:</label><br/>
-    <input type="text" name="received"><br/>
+    <label id="label1"> Received:</label>
+    <input type="date" name="received"><br/>
 
-    <label id="first">Scheduled:</label><br/>
-    <input type="text" name="scheduled"><br/>
+    <label id="label1">Scheduled:</label>
+    <input type="date" name="scheduled"><br/>
 
-    <label id="first">Compleated?</label><br/>
-    <input type="text" name="compleated"><br/>
+    <label id="label1">Compleated?</label>
+     <select id="custom" name="compleated">
 
-    <label id="first">Location id:</label><br/>
+            <option value="yes" >yes</option>
+            <option value="no" >no</option>
+
+  </select>
+
+    <label id="label1">Location id:</label><br/>
     <input type="text" name="location_id"><br/>
 
-  <!--  <button type="submit" name="save">save</button>
-    <button type="submit" name="get">get</button>
- -->
-        <input type=submit>
-            <input type=reset>
-    </form>
+</fieldset>
 
+            <div id="custom1">
+
+            <input type=submit>
+            <input type=reset>
+             </div>
+
+        </form>
+
+    <br>
+        <footer> <small>Copyright &copy; 2018 Roman Babushkin</small></footer>
+
+        </main>
+</div>
 </body>
 </html>

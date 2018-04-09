@@ -1,10 +1,10 @@
 <?php
 
-class Workorder extends Controller {
+class WorkorderImpl extends Controller {
 
     public static function listWorkorders() {
 
-        print_r(self::query("SELECT * FROM workorder"));
+        return (self::query("SELECT * FROM workorder"));
 
     }
 
