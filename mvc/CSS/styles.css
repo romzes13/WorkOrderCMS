@@ -3,6 +3,9 @@
 #wrapper {  margin-left: auto;
             margin-right: auto;
             width: 80%;
+
+
+
          }
 body {     background-color:aliceblue;
            /* color:darkorange; aliceblue */
@@ -11,11 +14,59 @@ body {     background-color:aliceblue;
 h2 {    background-color: antiquewhite;
         text-align: center;}
 
-nav {   font-weight: bold;
-        font-size: 1.25em;
-        word-spacing: 1em;}
 
-ul   { font-weight: bold; }
+/**************   Navigation    ****************/
+
+nav {
+	    font-weight: bold;
+    	background-color: #FFD3C0;
+}
+
+nav a {
+
+	text-decoration: none;
+	padding: 20px;
+	display: block;
+    color: darkblue;
+
+}
+
+nav ul {
+
+    	list-style-type: none;
+    	margin: 0;
+       	overflow: hidden;
+    	background-color: #blue;
+        }
+
+nav ul a {
+
+    	text-decoration: none;
+        }
+
+nav a:hover {
+
+	    color: #FFFFFF;
+        background-color: #FFB89A;
+    }
+
+li {
+
+	margin-left: 10px;
+	margin-right: auto;
+    	float: left;
+}
+
+li a {
+
+
+    	text-align: center;
+    	padding: 11px 11px;
+    	text-decoration: none;
+}
+
+
+
 
 footer {text-align: center}
 
