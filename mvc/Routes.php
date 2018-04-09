@@ -18,12 +18,27 @@ Route::set('test', function() {
     echo "test";
 });
 
-// Adding new user
-Route::set('user', function() {
-    UserImpl::listUsers();
+// Display all users
+Route::set('listUsers', function() {
+    UserImpl::CreateView('ListUsers');
     //User::addUser();
 });
 
+// Delete user
+Route::set('deleteUser', function() {
+    UserImpl::deleteUser($_GET['id']);
+    UserImpl::CreateView('ListUsers');
+
+});
+
+// Update user information
+Route::set('updateUser', function() {
+    UserImpl::findUser($_GET['id']);
+    UserImpl::CreateView('UpdateUser');
+    //User::addUser();
+});
+
+// Adding new user
 Route::set('addUser', function() {
     //User::listUsers();
     UserImpl::CreateView('AddUser');
