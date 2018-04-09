@@ -1,9 +1,11 @@
 <nav>
   <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="feedback.html">Feedback</a></li>
-    <li><a href="contacts.html">Contacts</a></li>
+    <li><a href="">Home</a></li>
+    <li><a href="loginTest">Session</a></li>
+    <li><a href="addWorkorder">Add workorder</a></li>
+    <li><a href="listWorkorders">All workorders</a></li>
+    <li><a href="dashboard">Dashboard</a></li>
+    <li><a href="logout">logout
+        <?php echo $_SESSION['name']; ?></a></li>
   </ul>
 </nav>

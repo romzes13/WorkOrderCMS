@@ -8,6 +8,7 @@
 <a href="logout">User logout</a><br>
 <a href="dashboard">Dashboard</a><br>
 <a href="addUser">Add user</a><br>
+<a href="listUsers">Display all users</a><br>
 <a href="addWorkorder">Add workorder</a><br>
 <a href="listWorkorders">Display all workorders</a><br>
 
