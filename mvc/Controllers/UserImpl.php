@@ -2,6 +2,8 @@
 
 class UserImpl extends Controller {
 
+    // Returns all users from database
+    // TODO Error -> new TableRows
     public static function listUsers() {
            // print_r(self::query("SELECT * FROM Handymans_list"));
         echo "<h4>Inside listUsers() </h4>";
@@ -18,7 +20,10 @@ class UserImpl extends Controller {
 
     }
 
-    public static function addUser($name, $password) {
+    ////////////////////////////////
+    // Adds new user to database ///
+    ////////////////////////////////
+    public static function addUser($name, $password, $role) {
 
         // remove echo statements
         echo "user: ". $name;
@@ -28,7 +33,7 @@ class UserImpl extends Controller {
 
         //TODO Add security and validate input
 
-$sql ="INSERT INTO users (name, password) VALUES ('$name', '$password')";
+$sql ="INSERT INTO users (name, password, role) VALUES ('$name', '$password', '$role')";
         self::insert($sql);
 
         //echo $sql;
@@ -47,6 +52,18 @@ $sql ="INSERT INTO users (name, password) VALUES ('$name', '$password')";
         $data = self::query("SELECT * FROM users WHERE name='$name'");
 
         //return (self::query("SELECT * FROM users"));
+        return $data;
+    }
+
+    // Find user by name and password
+    public static function findUserByLogin($name, $password) {
+
+        //echo "<h4>Inside findUser() </h4>";
+
+    //print_r(self::query("SELECT * FROM users WHERE name='Roland'"));
+
+$data = self::query("SELECT * FROM users WHERE name='$name' AND password='$password'");
+
         return $data;
     }
 
