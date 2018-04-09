@@ -4,7 +4,7 @@ class UserImpl extends Controller {
 
     // Returns all users from database
     // TODO Error -> new TableRows
-    public static function listUsers() {
+    public static function listUsers1() {
            // print_r(self::query("SELECT * FROM Handymans_list"));
         echo "<h4>Inside listUsers() </h4>";
         print_r(self::query("SELECT * FROM users"));
@@ -65,6 +65,20 @@ $sql ="INSERT INTO users (name, password, role) VALUES ('$name', '$password', '$
 $data = self::query("SELECT * FROM users WHERE name='$name' AND password='$password'");
 
         return $data;
+    }
+
+    // Returns all users
+    public static function listUsers() {
+
+        return (self::query("SELECT * FROM users"));
+
+    }
+
+    // Returns all users
+    public static function deleteUser($id) {
+
+        self::delete("DELETE FROM users WHERE id = '$id'");
+
     }
 
 }
