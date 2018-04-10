@@ -94,6 +94,8 @@ Route::set('login', function() {
 Route::set('loginAuth', function() {
 
     LoginImpl::loginAuth($_POST["userName"], $_POST["password"]);
+    header("Location: dashboard");
+    //LoginImpl::CreateView('Dashboard');
 
 });
 
