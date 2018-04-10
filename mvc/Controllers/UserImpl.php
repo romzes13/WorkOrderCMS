@@ -81,6 +81,29 @@ $data = self::query("SELECT * FROM users WHERE name='$name' AND password='$passw
 
     }
 
+    // Find user by id
+    public static function findUserById($id) {
+
+$data = self::query("SELECT * FROM users WHERE id = '$id'");
+
+
+        foreach( $data as $row ) {
+
+            $user = new User($row['name'], $row['password'], $row['role']);
+
+
+        return $user;
+    }
+
+}
+    // Update user information
+    public static function updateUserById($id, $name, $password, $role) {
+
+   $sql = "UPDATE users SET name='$name', password='$password', role='$role' WHERE id='$id'";
+        self::insert($sql);
+
+
+    }
 }
 
 ?>

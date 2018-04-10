@@ -31,10 +31,17 @@ Route::set('deleteUser', function() {
 
 });
 
-// Update user information
+// Update user information first page
 Route::set('updateUser', function() {
-    UserImpl::findUser($_GET['id']);
+    //UserImpl::findUser($_GET['id']);
     UserImpl::CreateView('UpdateUser');
+    //User::addUser();
+});
+
+// Update user information second page (confirmation)
+Route::set('updateUserInfo', function() {
+    UserImpl::updateUserById($_POST["id"], $_POST["userName"], $_POST["password"], $_POST["role"] );
+    UserImpl::CreateView('UpdateUserInfo');
     //User::addUser();
 });
 
@@ -87,6 +94,8 @@ Route::set('login', function() {
 Route::set('loginAuth', function() {
 
     LoginImpl::loginAuth($_POST["userName"], $_POST["password"]);
+    header("Location: dashboard");
+    //LoginImpl::CreateView('Dashboard');
 
 });
 
@@ -112,6 +121,14 @@ Route::set('dashboard', function() {
     LoginImpl::CreateView('Dashboard');
 
 });
+
+// Display all contractors
+Route::set('listContractors', function() {
+
+    ContractorImpl::CreateView('Contractor/ListContractors');
+
+});
+
 
 
 

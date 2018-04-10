@@ -50,7 +50,7 @@ class LoginImpl extends Controller {
              echo $row['role']."  <br>";
 
              // creating new user and exiting from forloop
-            $user = new User($row['name'], $row['password'], $row['role']);
+            $user = new User($row['id'], $row['name'], $row['password'], $row['role']);
 
                 echo "Test: found user = ".$user->name;
 
@@ -70,6 +70,7 @@ class LoginImpl extends Controller {
     // Check if user exist in session
     public function loginSession($user) {
 
+        echo "<br>From login session: ".$user->id;
         echo "<br>From login session: ".$user->name;
         echo "<br>From login session: ".$user->password;
         echo "<br>From login session: ".$user->role;
@@ -77,6 +78,7 @@ class LoginImpl extends Controller {
          session_start();
 
 
+    $_SESSION['id']   = $user->id;
     $_SESSION['name'] = $user->name;
     $_SESSION['pass'] = $user->password;
     $_SESSION['role'] = $user->role;
