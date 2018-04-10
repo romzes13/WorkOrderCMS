@@ -122,6 +122,14 @@ Route::set('dashboard', function() {
 
 });
 
+// Display all contractors
+Route::set('listContractors', function() {
+
+    ContractorImpl::CreateView('Contractor/ListContractors');
+
+});
+
+
 
 
 
