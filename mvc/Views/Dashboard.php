@@ -50,22 +50,23 @@
         echo "<h4>Contractor</h4>";
          include 'contractor_dashboard.php';
     }
-
-    ?>
-
-
+ ?>
 
     <main>
 
-
         <h4>Add menus to dashboard</h4>
 
+<?php if($_SESSION['role'] == "contractor") {
+    include 'Contractor/ContractorInfo.php';
+}
+?>
 
 
 
 Session registred for :<?php echo $_SESSION['name'];  ?>  <br>
     and password is: <?php echo $_SESSION['pass']; ?> <br>
-    Role: <?php echo $_SESSION['role']; ?>
+    Role: <?php echo $_SESSION['role'];
+            echo "<br>Id: ".$_SESSION['id']; ?>
 
 
     <br>
