@@ -15,12 +15,6 @@
     <div id="wrapper">
 <header><h2>User login page</h2></header>
 
-<nav>
-    <b>
-
-    </b>
-
-</nav>
 
     <main>
 
@@ -53,7 +47,7 @@
         </form>
 
     <br>
-        <footer> <small>Copyright &copy; 2018 Roman Babushkin</small></footer>
+        <?php      include 'footer.php'; ?>
 
         </main>
 </div>
