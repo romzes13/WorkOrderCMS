@@ -18,7 +18,8 @@
 <body>
     <div id="wrapper">
 
-        <header><h2>Dashboard::</h2></header>
+
+        <?php      include 'header.php'; ?>
 
     <?php
         // Check session first
@@ -58,6 +59,10 @@
 
 <?php if($_SESSION['role'] == "contractor") {
     include 'Contractor/ContractorInfo.php';
+    echo "<br><br>";
+    include 'Contractor/AcceptedWorkorders.php';
+    echo "<br><br>";
+    include 'Contractor/ListWorkorders.php';
 }
 ?>
 
@@ -70,7 +75,8 @@ Session registred for :<?php echo $_SESSION['name'];  ?>  <br>
 
 
     <br>
- <footer> <small>Copyright &copy; 2018 Roman Babushkin</small></footer>
+
+  <?php      include 'footer.php'; ?>
 
 </main>
         </div>
