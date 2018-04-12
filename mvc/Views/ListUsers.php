@@ -43,7 +43,7 @@ echo "<th><a href=\"deleteUser?id=".$row['id']."\">delete id</a></th>";
     ?>
 
 
-
+<?php      include 'footer.php'; ?>
 
 </body>
 </html>
