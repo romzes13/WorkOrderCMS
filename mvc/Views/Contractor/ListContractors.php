@@ -9,7 +9,7 @@
 
 </head>
 <body id="wrapper">
-
+<?php      include 'header.php'; ?>
 
        <h1>Contractors example:</h1>
 
@@ -46,7 +46,7 @@
     ?>
 
 
-
+<?php      include 'footer.php'; ?>
 
 </body>
 </html>
