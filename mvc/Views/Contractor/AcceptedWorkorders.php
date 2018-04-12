@@ -1,20 +1,7 @@
-<!doctype html>
-<html>
- <head>
-
-    <title>All workorders::</title>
- <meta charset="utf-8">
- <!--   <link rel="stylesheet" href="styles.css"> -->
- <style><?php include 'CSS/styles.css'; ?></style>
-
-</head>
-<body id="wrapper">
-
-
-       <h1>Workorders example:</h1>
+<h4>Workorders::</h4>
 
         <table>
-        <caption>List of all workorders</caption>
+        <caption>Accepted workorders</caption>
             <tr>
                 <th>Id</th>
                 <th>Description</th>
@@ -26,7 +13,8 @@
                 <th>Location_id</th>
             </tr>
   <?php
-            $data = WorkorderImpl::listWorkorders();
+           // session_start();
+            $data = WorkorderImpl::acceptedWorkorders($_SESSION['contractor_id']);
 
             foreach( $data as $row ) {
 
@@ -44,16 +32,3 @@
 
         echo "</table>";
     ?>
-
-
-
-
-
-
-
-
-
-<?php      include 'footer.php'; ?>
-
-</body>
-</html>

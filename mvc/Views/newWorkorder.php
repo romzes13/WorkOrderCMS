@@ -56,7 +56,7 @@
         </form>
 
     <br>
-        <footer> <small>Copyright &copy; 2018 Roman Babushkin</small></footer>
+        <?php      include 'footer.php'; ?>
 
         </main>
 </div>

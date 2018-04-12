@@ -62,12 +62,23 @@ UserImpl::addUser($_POST["userName"], $_POST["password"], $_POST["role"]);
 });
 
 // Adding new work order
-
 Route::set('addWorkorder', function() {
 
     WorkorderImpl::CreateView('AddWorkorder');
 
 });
+
+// Accept workorder
+Route::set('acceptWorkorder', function() {
+    // accept workorder
+    session_start();
+    WorkorderImpl::acceptWorkorderById($_SESSION['contractor_id'], $_GET['id']);
+    // display accepted wo
+    WorkorderImpl::CreateView('Contractor/AcceptedWorkorders');
+
+});
+
+
 Route::set('newWorkorder', function() {
 
     WorkorderImpl::addWorkorder($_POST["description"], $_POST["estimate"], $_POST["location"], $_POST["received"], $_POST["scheduled"], $_POST["compleated"], $_POST["location_id"]);

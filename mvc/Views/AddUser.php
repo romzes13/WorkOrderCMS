@@ -13,14 +13,10 @@
 
 <body>
     <div id="wrapper">
-<header><h2>User registration page</h2></header>
+        <?php      include 'header.php'; ?>
 
-<nav>
-    <b>
+<h3>User registration page</h3>
 
-    </b>
-
-</nav>
 
     <main>
 
@@ -62,7 +58,7 @@
         </form>
 
     <br>
-        <footer> <small>Copyright &copy; 2018 Roman Babushkin</small></footer>
+        <?php      include 'footer.php'; ?>
 
         </main>
 </div>

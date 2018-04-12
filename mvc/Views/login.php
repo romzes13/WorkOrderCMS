@@ -1,25 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
- <title>Workorder CMS</title>
-    <meta charset="utf-8">
-   <!-- <link rel="stylesheet" href="/mvc/CSS/styles.css"> -->
-    <style>
-    <?php include 'CSS/styles.css'; ?>
-    </style>
-
-</head>
-
-
-<body>
-    <div id="wrapper">
-<header><h2>User login page</h2></header>
-
-
-    <main>
-
-
-        <h4>* Required fields</h4>
+   <h4>* Required fields</h4>
 
     <!-- Form for Help -->
 <form action="loginAuth" method="post">
@@ -45,11 +24,3 @@
              </div>
 
         </form>
-
-    <br>
-        <?php      include 'footer.php'; ?>
-
-        </main>
-</div>
-</body>
-</html>

@@ -12,7 +12,6 @@
 
 <?php
 
-
 $data = ContractorImpl::findContractorByUserId($_SESSION['id']);
 
 foreach( $data as $row ) {
@@ -25,8 +24,10 @@ foreach( $data as $row ) {
             echo "<th>".$row['email']."</th>";
             echo "<th>".$row['rate']."</th>";
             echo "<th>".$row['users_id']."</th>";
-
             echo "</tr>";
+
+            $_SESSION['contractor_id']   = $row['id'];
+
             }
 
         echo "</table>";
