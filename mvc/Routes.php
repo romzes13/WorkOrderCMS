@@ -68,6 +68,37 @@ Route::set('addWorkorder', function() {
 
 });
 
+// Adding new work order Client Version
+Route::set('addWorkorder1', function() {
+
+    WorkorderImpl::CreateView('AddWorkorder1');
+
+});
+
+// Delete workorder
+Route::set('deleteWorkorder', function() {
+    WorkorderImpl::deleteWorkorder($_GET['id']);
+    WorkorderImpl::CreateView('ShowWorkorders1');
+
+});
+
+// Update workorder information first page
+Route::set('updateWorkorder', function() {
+
+    WorkorderImpl::CreateView('UpdateWorkorder');
+
+});
+
+// Update workorder information second page (confirmation)
+Route::set('updateWorkorderInfo', function() {
+
+    WorkorderImpl::updateWorkorderById($_POST["id"], $_POST["description"], $_POST["location"], $_POST["received"] );
+
+    WorkorderImpl::CreateView('UpdateWorkorderInfo');
+
+});
+
+
 // Accept workorder
 Route::set('acceptWorkorder', function() {
     // accept workorder
@@ -78,12 +109,33 @@ Route::set('acceptWorkorder', function() {
 
 });
 
+// Only for client adding new work order
+Route::set('newWorkorder1', function() {
+
+    // Validate input
+   $noError = WorkorderImpl::validate($_POST["description"], $_POST["location"], $_POST["received"]);
+
+    if ($noError == true) {
+
+    WorkorderImpl::addWorkorder1($_POST["description"], $_POST["location"], $_POST["received"] );
+
+    WorkorderImpl::CreateView('newWorkorder1');
+
+    }
+
+});
 
 Route::set('newWorkorder', function() {
 
-    WorkorderImpl::addWorkorder($_POST["description"], $_POST["estimate"], $_POST["location"], $_POST["received"], $_POST["scheduled"], $_POST["compleated"], $_POST["location_id"]);
+    // Validate input
+    WorkorderImpl::validate($_POST["description"], $_POST["estimate"], $_POST["location"], $_POST["received"], $_POST["scheduled"], $_POST["compleated"], $_POST["location_id"]);
+
+
+   /* WorkorderImpl::addWorkorder($_POST["description"], $_POST["estimate"], $_POST["location"], $_POST["received"], $_POST["scheduled"], $_POST["compleated"], $_POST["location_id"]);
 
     WorkorderImpl::CreateView('newWorkorder');
+
+    */
 });
 
 // Display all work orders
@@ -91,6 +143,13 @@ Route::set('newWorkorder', function() {
 Route::set('listWorkorders', function() {
 
     WorkorderImpl::CreateView('ShowWorkorders');
+
+});
+
+// Display all work orders
+Route::set('listWorkorders1', function() {
+
+    WorkorderImpl::CreateView('ShowWorkorders1');
 
 });
 
@@ -122,9 +181,15 @@ Route::set('loginTest', function() {
 
     //LoginImpl::loginTest();
     LoginImpl::CreateView('session_test');
+});
 
+// Display session variables
+Route::set('sessionTest', function() {
+
+    LoginImpl::CreateView('SessionTest');
 
 });
+
 
 // Dashboard
 Route::set('dashboard', function() {
