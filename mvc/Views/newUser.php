@@ -42,9 +42,9 @@
 </fieldset>
 
             <div id="custom1">
-
+        <a href="index.php">
             <input type=button value="  OK  ">
-
+                </a>
              </div>
 
         </form>

@@ -8,6 +8,44 @@
     <?php include 'CSS/styles.css'; ?>
     </style>
 
+      <!-- JavaScript code to validate form -->
+    <script>
+
+
+        // global variable
+        var erMessage = "Required";
+      // Validate form
+        function validateForm() {
+
+    var userName = document.forms["form"]["userName"].value;
+    var password = document.forms["form"]["password"].value;
+    var role = document.forms["form"]["role"].value;
+    var total = 2;
+
+        if (userName === "") {
+
+                document.getElementById("errorName").innerHTML = erMessage;
+                total--;
+                //return false;
+            }
+
+            if (password === "") {
+
+                document.getElementById("errorPassw").innerHTML = erMessage;
+                total--;
+                //return false;
+
+            }
+
+            if (total < 2) {
+                return false;
+            }
+            else
+                document.getElementById("errorLocation").innerHTML = "";
+
+    }
+    </script>
+
 </head>
 
 
@@ -24,7 +62,7 @@
         <h4>* Required fields</h4>
 
     <!-- Form for Help -->
-<form action="newUser" method="post">
+<form name="form" action="newUser" method="post" onsubmit="return validateForm()">
             <!-- form controlls -->
 
 <fieldset>
