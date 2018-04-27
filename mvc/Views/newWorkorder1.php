@@ -1,3 +1,4 @@
+<?php    session_start();  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,17 +12,20 @@
 
 <body>
     <div id="wrapper">
-<header><h2>Workorder page</h2></header>
 
-<nav>
-    <b>
-
-    </b>
-
-</nav>
+<?php      include 'header.php'; ?>
+<?php      include 'sessionCheck.php'; ?>
 
     <main>
 
+<?php if($_SESSION['role'] == "contractor") {
+    include 'Contractor/ContractorInfo.php';
+    echo "<br><br>";
+    include 'Contractor/AcceptedWorkorders.php';
+    echo "<br><br>";
+    include 'Contractor/ListWorkorders.php';
+}
+?>
 
 
         <h4>Your service request has been succesfully submitted!</h4>
@@ -35,12 +39,8 @@
 <div id="label00">
 
 <label>Description: <?php echo $_POST["description"]; ?></label><br>
-<label>Estimate: <?php echo $_POST["estimate"]; ?></label><br>
 <label >Location: <?php echo $_POST["location"]; ?></label><br>
-<label >Received: <?php echo $_POST["received"]; ?></label><br>
-<label >Scheduled: <?php echo $_POST["scheduled"]; ?></label><br>
-<label >Compleated: <?php echo $_POST["compleated"]; ?></label><br>
-<label >Location_id: <?php echo $_POST["location_id"]; ?></label><br>
+<label >Date: <?php echo $_POST["received"]; ?></label><br>
 
 
 </div>
