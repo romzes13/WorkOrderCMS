@@ -89,7 +89,7 @@ $data = self::query("SELECT * FROM users WHERE id = '$id'");
 
         foreach( $data as $row ) {
 
-            $user = new User($row['name'], $row['password'], $row['role']);
+            $user = new User($row['id'], $row['name'], $row['password'], $row['role']);
 
 
         return $user;

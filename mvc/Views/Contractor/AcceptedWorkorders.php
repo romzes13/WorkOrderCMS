@@ -1,4 +1,5 @@
-<h4>Workorders::</h4>
+
+<p>Here's the list of accepted workorders by a contractor. It can be empty if a contractor hasn't accepted any service calls yet. Update function updates the workorder details such as schedule a visit day, set estimate price and mark workorder as completed. Cancel will remove the picked workorder from accepted workorders list.</p>
 
         <table>
         <caption>Accepted workorders</caption>
@@ -11,6 +12,8 @@
                 <th>Scheduled   </th>
                 <th>Compleated</th>
                 <th>Location_id</th>
+                <th>Update</th>
+                <th>Delete</th>
             </tr>
   <?php
            // session_start();
@@ -27,6 +30,8 @@
             echo "<th>".$row['scheduled']."</th>";
             echo "<th>".$row['compleated']."</th>";
             echo "<th>".$row['location_id']."</th>";
+echo "<th><a href=\"updateWorkContractor?id=".$row['id']."\">update</a></th>";
+echo "<th><a href=\"cancelWorkorder?id=".$row['id']."\">cancel</a></th>";
             echo "</tr>";
             }
 

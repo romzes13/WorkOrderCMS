@@ -15,7 +15,17 @@
     <div id="wrapper">
         <?php      include 'header.php'; ?>
 
+    <nav>
+    <ul>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="about-us">about us</a></li>
+        <li><a href="login">Login</a></li>
+        <li><a href="addUser">Sign up</a></li>
+        <li><a href="dashboard">Dashboard</a></li>
+        <li><a href="logout">User logout</a></li>
+    </ul>
 
+</nav>
 
     <main>
 <h3>About us</h3>

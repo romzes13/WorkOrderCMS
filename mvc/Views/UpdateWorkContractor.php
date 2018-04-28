@@ -21,16 +21,6 @@
 
     <main>
 
-<?php if($_SESSION['role'] == "contractor") {
-    include 'Contractor/ContractorInfo.php';
-    echo "<br><br>";
-    include 'Contractor/AcceptedWorkorders.php';
-    echo "<br><br>";
-    include 'Contractor/ListWorkorders.php';
-}
-?>
-
-
         <h4>Workorder Update form</h4>
 
     <!-- Form for update -->
@@ -44,7 +34,7 @@
   ?>
 
 
-<form name="form" action="updateWorkorderInfo" method="post" onsubmit="return validateForm()">
+<form name="form" action="updateWorkContrInfo" method="post" onsubmit="return validateForm()">
             <!-- form controlls -->
 <input type="hidden" name="id" value="<?php echo $_GET['id']; ?> "/>
 
@@ -52,24 +42,42 @@
     <legend>Update service request</legend>
 
 
-    <label id="label1">Location</label>
+    <label id="label1">Location:</label><br>
+    <label id="label00"><?php echo $workorder->location; ?></label>
+    <br/>
 
-    <input type="text" name="location"
-           value="<?php echo $workorder->location; ?>">
+    <label id="label1"> Date received: </label><br>
+    <label id="label00"><?php echo $workorder->received; ?></label>
 
-           <h8 id="errorLocation" class="error"></h8><br/>
+   <br/><br>
 
-    <label id="label1"> Date:</label>
-    <input type="date" name="received"
-           value="<?php echo $workorder->received; ?>">
+    <label id="label1"> Scheduled:</label>
+     <input type="date" name="scheduled"
+           value="<?php echo $workorder->scheduled; ?>">
+    <br><br>
 
-    <h8 id="date" name="date" class="error">*
-    <script> getCurrentDate();</script>
-    </h8><br/>
+     <label id="label1"> location_id:</label>
+     <label id="label00"><?php echo $workorder->location_id; ?></label>
+    <br><br>
 
-
-
+    <label id="label1"> Estimate$:</label>
+     <input type="text" name="estimate"
+           value="<?php echo $workorder->estimate; ?>">
     <br>
+
+     <label id="label1"> Compleated:</label>
+
+
+
+    <select id="custom" name="compleated" >
+      <option selected="<?php echo $workorder->compleated; ?>">
+          <?php echo $workorder->compleated; ?></option>
+            <option value="yes" >yes</option>
+            <option value="no" >no</option>
+
+  </select>
+
+    <br><br>
     <label for="feedback">Description:</label><h8 id="errorDescription" class="error"></h8> <br>
 <textarea id="feedback" name="description" rows="4"
           cols="40"><?php echo $workorder->description; ?></textarea>

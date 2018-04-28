@@ -1,5 +1,5 @@
 <?php
-
+    ob_start();
     session_start();
 
 ?>
@@ -54,24 +54,15 @@
  ?>
 
     <main>
-
-        <h4>Add menus to dashboard</h4>
-
+        <br>
 <?php if($_SESSION['role'] == "contractor") {
     include 'Contractor/ContractorInfo.php';
-    echo "<br><br>";
+    echo "<br>";
     include 'Contractor/AcceptedWorkorders.php';
-    echo "<br><br>";
+    echo "<br>";
     include 'Contractor/ListWorkorders.php';
 }
 ?>
-
-
-
-Session registred for :<?php echo $_SESSION['name'];  ?>  <br>
-    and password is: <?php echo $_SESSION['pass']; ?> <br>
-    Role: <?php echo $_SESSION['role'];
-            echo "<br>Id: ".$_SESSION['id']; ?>
 
 
     <br>

@@ -19,9 +19,9 @@ class Database {
   public static function query($query, $params = array()) {
 
       // remove these statements
-      echo $query;
-      echo "<br>";
-      echo $params;
+    //  echo $query;
+    //  echo "<br>";
+    //  echo $params;
 
     $stmt = self::con()->prepare($query);
     $stmt->execute($params);
@@ -30,11 +30,11 @@ class Database {
   }
 
     public static function insert($ins, $params = array()) {
-        echo $ins;
-        echo $params;
+       // echo $ins;
+       // echo $params;
         $arrlength = count($params);
-        echo $arrlength;
-        echo " Testing output:<br>";
+      //  echo $arrlength;
+      //  echo " Testing output:<br>";
 
 
         $stmt = self::con()->prepare($ins);
@@ -42,12 +42,8 @@ class Database {
 
         // Confirmation about added record
 
-        echo "<h4>New record has been added: ".$ins."</h4>";
+      //  echo "<h4>New record has been added: ".$ins."</h4>";
 
-    //$stmt->execute( array( ':username'=>$name, ':password'=>$password));
-
-    //$data = $stmt->fetchAll();
-    //return $data;
 
 
     }
@@ -60,7 +56,7 @@ class Database {
 
         // Confirmation about deleted record
 
-        echo "<h4>Record has been deleted: ".$ins."</h4>";
+      //  echo "<h4>Record has been deleted: ".$ins."</h4>";
 
 
 
