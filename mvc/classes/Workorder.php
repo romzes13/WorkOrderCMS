@@ -10,12 +10,12 @@
 */
 class Workorder {
 
-    var $id, $description, $estimate, $location, $received, $compleated, $location_id;
+    var $id, $description, $estimate, $location, $received, $scheduled, $compleated, $location_id;
 
 
 
     // Constructor
-    function __construct($id, $description, $estimate, $location, $received, $compleated, $location_id)
+    function __construct($id, $description, $estimate, $location, $received, $scheduled, $compleated, $location_id)
 
     {
         $this->id = $id;
@@ -23,6 +23,7 @@ class Workorder {
         $this->estimate = $estimate;
         $this->location = $location;
         $this->received = $received;
+        $this->scheduled = $scheduled;
         $this->compleated = $compleated;
         $this->location_id = $location_id;
 

@@ -31,6 +31,15 @@ class WorkorderImpl extends Controller {
 
     }
 
+
+
+      // Cancel accepted work order by contractor
+      public static function cancelWorkorderById($id) {
+
+        self::delete("DELETE FROM received_wo WHERE received_wo.workorder_id = '$id'");
+
+    }
+
           // Finish it TODO
         public static function acceptedWorkorders($contractor_id) {
 
@@ -43,7 +52,7 @@ class WorkorderImpl extends Controller {
         //    AND		contractor_id = '$contractor_id';";
 
             $sql = "SELECT  workorder.*
-            FROM workorder.received_wo, workorder, contractor
+            FROM received_wo, workorder, contractor
 	        WHERE received_wo.workorder_id = workorder.id
             AND		contractor_id = contractor.id
             AND	    contractor_id = '$contractor_id';";
@@ -103,7 +112,7 @@ $sql ="INSERT INTO workorder (description, location, received, location_id) VALU
 
     foreach( $data as $row ) {
 
-       $workorder = new Workorder($row['id'],$row['description'], $row['estimate'], $row['location'], $row['received'], $row['compleated'], $row['location_id']);
+       $workorder = new Workorder($row['id'],$row['description'], $row['estimate'], $row['location'], $row['received'], $row['scheduled'], $row['compleated'], $row['location_id']);
 
             return $workorder;
     }
@@ -115,6 +124,16 @@ $sql ="INSERT INTO workorder (description, location, received, location_id) VALU
     public static function updateWorkorderById($id, $description, $location, $received) {
 
    $sql = "UPDATE workorder SET description='$description', location='$location', received='$received' WHERE id='$id'";
+        self::insert($sql);
+
+    }
+
+
+    // Update workorder for contractor by id
+    public static function updateWorkContrById($id, $description, $estimate, $scheduled, $compleated) {
+
+   $sql = "UPDATE workorder SET description='$description', estimate='$estimate', scheduled='$scheduled', compleated='$compleated' WHERE id='$id'";
+
         self::insert($sql);
 
     }

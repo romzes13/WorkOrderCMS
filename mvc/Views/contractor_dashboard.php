@@ -1,9 +1,10 @@
 <nav>
   <ul>
-    <li><a href="">Home</a></li>
-    <li><a href="loginTest">Session</a></li>
+    <li><a href="index.php">Home</a></li>
+    <li><a href="sessionTest">Session</a></li>
     <li><a href="listWorkorders">Display all workorders</a></li>
     <li><a href="dashboard">Dashboard</a></li>
+    <li><a href="about">About us</a></li>
     <li><a href="logout">logout</a></li>
   </ul>
 </nav>

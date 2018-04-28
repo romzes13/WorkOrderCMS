@@ -1,4 +1,4 @@
-<h4>Workorders::</h4>
+<p>List of available workorders in the system, where a contractor may accept service calls.</p>
 
         <table>
         <caption>List of all workorders</caption>

@@ -21,33 +21,25 @@
 
     <main>
 
-<?php if($_SESSION['role'] == "contractor") {
-    include 'Contractor/ContractorInfo.php';
-    echo "<br><br>";
-    include 'Contractor/AcceptedWorkorders.php';
-    echo "<br><br>";
-    include 'Contractor/ListWorkorders.php';
-}
-?>
 
-
-        <h4>Workorder Update confirmation page</h4>
+    <h4>Contractor's Workorder Updated confirmation page</h4>
 
 
 
-<form name="form" action="dashboard" method="post" onsubmit="return validateForm()">
+<form name="form" action="dashboard" method="post">
 
 
 <fieldset>
     <legend>Updated service request</legend>
 
 
+    <label id="label00"><b>Date:</b><?php echo $_POST["scheduled"]; ?></label><br><br>
 
-    <label id="label1">Location: <?php echo $_POST["location"]; ?></label><br>
+    <label id="label00">Estimate:   <?php echo $_POST["estimate"]; ?></label><br><br>
 
-    <label id="label1">Date: <?php echo $_POST["received"]; ?></label><br>
+    <label id="label00">Compleated ?: <?php echo $_POST["compleated"]; ?></label><br><br>
 
-    <label id="label1">Description: <?php echo $_POST["description"]; ?></label><br>
+    <label id="label00">Description: <?php echo $_POST["description"]; ?></label><br>
 
     <br>
 

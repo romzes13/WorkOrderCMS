@@ -1,3 +1,7 @@
+<?php
+    ob_start();
+    session_start();
+?>
 <!doctype html>
 <html>
  <head>
@@ -9,8 +13,9 @@
 
 </head>
 <body id="wrapper">
-
-
+<?php      include 'header.php'; ?>
+<?php      include 'sessionCheck.php'; ?>
+<main>
        <h1>Workorders example:</h1>
 
         <table>
@@ -54,6 +59,6 @@
 
 
 <?php      include 'footer.php'; ?>
-
+</main>
 </body>
 </html>
