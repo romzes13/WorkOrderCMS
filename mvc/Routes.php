@@ -7,7 +7,13 @@ Route::set('index.php', function() {
 Route::set('about-us', function() {
     AboutUs::CreateView('AboutUs');
    // AboutUs::test();
-    AboutUs::printUsers();
+   // AboutUs::printUsers();
+});
+
+Route::set('about', function() {
+
+    AboutUs::CreateView('About');
+
 });
 
 Route::set('contact-us', function() {
@@ -23,6 +29,14 @@ Route::set('listUsers', function() {
     UserImpl::CreateView('ListUsers');
     //User::addUser();
 });
+
+// Display all users
+Route::set('listUsers1', function() {
+
+    UserImpl::CreateView('ListUsers1');
+
+});
+
 
 // Delete user
 Route::set('deleteUser', function() {
@@ -89,7 +103,23 @@ Route::set('updateWorkorder', function() {
 
 });
 
-// Update workorder information second page (confirmation)
+// Update workorder for contractor
+Route::set('updateWorkContractor', function() {
+
+    WorkorderImpl::CreateView('UpdateWorkContractor');
+
+});
+
+// Update workorder information Contractor (confirmation)
+Route::set('updateWorkContrInfo', function() {
+
+    WorkorderImpl::updateWorkContrById($_POST["id"], $_POST["description"], $_POST["estimate"], $_POST["scheduled"], $_POST["compleated"]);
+
+    WorkorderImpl::CreateView('UpdatedWorkContrInfo');
+
+});
+
+// Update workorder information Client (confirmation)
 Route::set('updateWorkorderInfo', function() {
 
     WorkorderImpl::updateWorkorderById($_POST["id"], $_POST["description"], $_POST["location"], $_POST["received"] );
@@ -105,9 +135,18 @@ Route::set('acceptWorkorder', function() {
     session_start();
     WorkorderImpl::acceptWorkorderById($_SESSION['contractor_id'], $_GET['id']);
     // display accepted wo
-    WorkorderImpl::CreateView('Contractor/AcceptedWorkorders');
+    //WorkorderImpl::CreateView('Contractor/AcceptedWorkorders');
+    WorkorderImpl::CreateView('Dashboard');
 
 });
+
+// Cancel accepted workorder by contractor
+Route::set('cancelWorkorder', function() {
+    WorkorderImpl::cancelWorkorderById($_GET['id']);
+    WorkorderImpl::CreateView('Dashboard');
+
+});
+
 
 // Only for client adding new work order
 Route::set('newWorkorder1', function() {
