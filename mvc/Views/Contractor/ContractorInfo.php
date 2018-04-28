@@ -1,3 +1,4 @@
+<p>Information about the contractor displayed here.</p>
 <table>
         <caption>Contractor::</caption>
             <tr>
