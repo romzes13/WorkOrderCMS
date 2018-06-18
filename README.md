@@ -25,3 +25,6 @@ WorkOrder Content Managment System (CMS) is designed to manage and dispatch work
 
 #### Contractor's Dashboard
 ![Image Contractor's Dashboard](https://github.com/romzes13/WorkOrderCMS/blob/master/Screenshot%20from%202018-06-08%2009-24-02.png)
+
+#### New dashboard design
+![Image Workorders](https://github.com/romzes13/WorkOrderCMS/blob/master/Screenshot%20from%202018-06-18%2013-53-24.png)
