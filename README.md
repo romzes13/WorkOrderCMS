@@ -1,6 +1,6 @@
 # WorkOrder CMS
 
-WorkOrder Content Managment System (CMS) is designed to manage and dispatch work orders. The CMS will help to add work orders, edit and upon completion generate an invoice in pdf format. MySQL database stores all information, including: login name, password, location, company name, phone number, work order number and details. PHP manages and generates the content for a website. HTML5, JavaScript and CSS add format for web pages and JS for data validation.
+WorkOrder Content Managment System (CMS) is designed to manage and dispatch work orders. The CMS helps to add work orders, edit and upon completion generates an invoice in pdf format. MySQL database stores all information, including: login name, password, location, company name, phone number, work order number and details. PHP manages and generates the content for a website. HTML5, JavaScript and CSS add format for web pages and JS for data validation.
 
 #### Built with
 - PHP 7
@@ -17,7 +17,8 @@ WorkOrder Content Managment System (CMS) is designed to manage and dispatch work
 - [ ] Scheduling system
 - [ ] Location map
 - [ ] Web responsive design
-- [ ] Work order progress
+- [ ] Work order progress bar, displays created->dispatched->accepted->scheduled->compleated
+- [ ] Implement Observer pattern to notify client, contractor and dispatcher of any workorder updates
 
 #### Sign up page
 
