@@ -19,6 +19,7 @@ WorkOrder Content Managment System (CMS) is designed to manage and dispatch work
 - [ ] Web responsive design
 - [ ] Work order progress bar, displays created->dispatched->accepted->scheduled->compleated
 - [ ] Implement Observer pattern to notify client, contractor and dispatcher of any workorder updates
+- [ ] Implement REST API for list of workorders
 
 #### Sign up page
 
