@@ -22,5 +22,6 @@ before_script:
 # Commands you want to run that will verify your build.
 
 script:
+ls
  phpunit tests
 
