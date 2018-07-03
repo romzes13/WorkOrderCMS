@@ -10,6 +10,11 @@ php:
 
  - 7.0
 
+ - 7.1
+
+ - 7.2
+
+ - hhvm
 
 # Commands to be run before your environment runs.
 
@@ -17,7 +22,7 @@ before_script:
 
  - composer self-update
 
- - composer install --no-interaction
+ - composer install --prefer-source --no-interaction --dev
 
 # Commands you want to run that will verify your build.
 
