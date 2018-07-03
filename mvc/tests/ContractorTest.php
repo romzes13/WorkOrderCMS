@@ -1,7 +1,7 @@
 <?php
 require './classes/Contractor.php';
 
-class ContractorTests extends PHPUnit_Framework_TestCase
+class ContractorTest extends PHPUnit_Framework_TestCase
 {
 
 /*    private $contractor;
