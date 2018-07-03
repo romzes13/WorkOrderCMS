@@ -29,6 +29,75 @@ class WorkorderImpl extends Controller {
 
         self::insert($sql);
 
+        // Notify(update) client and dispatcher
+        WorkorderImpl::notifyObserver($contractor_id, $workorder_id, $dispatcherId);
+
+    }
+
+
+    // Notify client and dispatcher that work order has been accepted
+    // Observer pattern
+    public static function notifyObserver($contractor_id, $workorder_id, $dispatcherId)
+    {
+
+        //Get contractors name
+        $contractor = ContractorImpl::findContractorById($contractor_id);
+        $contrName = '';
+
+        //echo "<br>Found contractor for id ".$contractor_id." <br>";
+
+        foreach( $contractor as $row ) {
+
+           // echo "id: ".$row['id']."<br>";
+           // echo "name: ".$row['name']."<br>";
+            $contrName = $row['name'];
+           // echo "address".$row['address']."<br>";
+           // echo "phone".$row['phone']."<br>";
+          //  echo "email".$row['email']."<br>";
+          //  echo "rate".$row['rate']."<br>";
+          //  echo "users_id".$row['users_id']."<br>";
+
+        }
+
+        //Get workorder details
+        $workorder = self::findWorkorderById($workorder_id);
+
+        //echo "<br>Found workorder for id ".$workorder_id." .<br>";
+
+        // Workorder
+
+            echo "Id: ".$workorder->id."<br>";
+            echo "Description: ".$workorder->description."<br>";
+            echo "Estimate: ".$workorder->estimate."<br>";
+            echo "Location: ".$workorder->location."<br>";
+            echo "Received: ".$workorder->received."<br>";
+            echo "Scheduled: ".$workorder->scheduled."<br>";
+            echo "Compleated: ".$workorder->compleated."<br>";
+            echo "Location_id: ".$workorder->location_id."<br>";
+
+
+        //  Notify client
+        $title = "Accepted";
+
+        include './classes/Observer/Notification.php';
+
+        $notification = new Notification($title, $workorder->description, $contrName, $workorder->id, $dispatcherId);
+
+        include './classes/Observer/AcceptedWONotifyObserver.php';
+
+        $observer = new AcceptedWONotifyObserver();
+        $notification->attachObserver('accepted', $observer);
+        $notification->accept();
+
+    }
+
+        // Match user to Contractor
+    public static function findContractorByUserId($id) {
+
+   $sql = "SELECT * FROM contractor WHERE users_id='$id'";
+        $data = self::query($sql);
+
+        return $data;
     }
 
 
@@ -144,7 +213,8 @@ $sql ="INSERT INTO workorder (description, location, received, location_id) VALU
 
         $errorCounter = 0;
 
-        if (empty($description = WorkorderImpl::testInput($description))){
+if (empty($description = WorkorderImpl::testInput($description)))
+    {
             $errorCounter++;
             echo "<h2>No description</h2>";
         }
