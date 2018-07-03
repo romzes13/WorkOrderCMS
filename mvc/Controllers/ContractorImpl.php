@@ -28,6 +28,25 @@ class ContractorImpl extends Controller {
    $sql = "SELECT * FROM contractor WHERE users_id='$id'";
         $data = self::query($sql);
 
+  /*      echo "Contractor:".var_dump($data);
+         foreach( $data as $row ) {
+
+            //echo "name:".$row['name'];
+            echo "id: ".$row['id']."<br>";
+            echo "name: ".$row['name']."<br>";
+
+        }
+
+ */
+        return $data;
+    }
+
+     // Find Contractor by Id
+    public static function findContractorById($id) {
+
+   $sql = "SELECT * FROM contractor WHERE id='$id'";
+        $data = self::query($sql);
+
         return $data;
     }
 
