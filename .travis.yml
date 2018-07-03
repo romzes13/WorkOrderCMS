@@ -21,15 +21,6 @@ before_script:
 
 # Commands you want to run that will verify your build.
 
-script: phpunit
-
-# allow_failures: Allow this build to fail under the specified environments.
-
-# fast_finish: If your build fails do not continue trying to build, just stop.
-
-
-
-
-# Run script
 script:
- - phpunit
+ phpunit tests/
+
