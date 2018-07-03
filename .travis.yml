@@ -23,5 +23,5 @@ before_script:
 
 script:
  - ls
- - phpunit tests
+ - phpunit mvc/tests
 
