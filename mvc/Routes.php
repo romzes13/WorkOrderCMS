@@ -244,11 +244,27 @@ Route::set('listContractors', function() {
 
 });
 
+//////// JSON //////////////////////
+
+// Display all contractors
+Route::set('contractors', function() {
+
+    ContractorImpl::CreateView('api/read/contractors');
+
+});
 
 
 
+//////// Observer //////////////////////
 
+// Notify client and dispatcher if contractor accepted a workorder
+//  or scheduled a visit date.
 
+Route::set('test22', function() {
+
+    ContractorImpl::CreateView('Contractor/ObserverWorkorders');
+
+});
 
 
 
