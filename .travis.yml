@@ -23,5 +23,6 @@ before_script:
 
 script:
  - ls
+ - ls -l mvc/
  - vendor/bin/phpunit mvc/tests
 
