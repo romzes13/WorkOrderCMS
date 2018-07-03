@@ -1,6 +1,7 @@
 <?php
-require '/home/travis/build/romzes13/WorkOrderCMS/mvc/classes/Contractor.php';
+//require '/home/travis/build/romzes13/WorkOrderCMS/mvc/classes/Contractor.php';
 //require './classes/Contractor.php';
+require __DIR__ . '/vendor/autoload.php';
 // use the following namespace
 use PHPUnit\Framework\TestCase;
 
