@@ -23,5 +23,5 @@ before_script:
 
 script:
  - ls
- - phpunit mvc/tests
+ - vendor/bin/phpunit mvc/tests
 
