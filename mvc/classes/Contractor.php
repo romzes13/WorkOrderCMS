@@ -8,7 +8,7 @@ class Contractor {
 
 
     // Constructor
-    function __construct($name, $address, $phone, $fax, $email, $website, $description)
+    function __construct($name, $address, $phone, $email, $rate, $user_id)
     {
         $this->name = $name;
         $this->address = $address;
@@ -19,7 +19,9 @@ class Contractor {
 
     }
 
-
+    function getName(){
+         return $this->name;
+      }
 
 
 }
