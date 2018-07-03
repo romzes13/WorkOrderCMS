@@ -1,5 +1,6 @@
 <?php
-require './classes/Contractor.php';
+require '/home/travis/build/romzes13/WorkOrderCMS/mvc/classes/Contractor.php';
+//require './classes/Contractor.php';
 
 class ContractorTest extends PHPUnit_Framework_TestCase
 {
