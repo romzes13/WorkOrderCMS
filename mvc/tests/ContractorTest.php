@@ -1,5 +1,6 @@
 <?php
 require './classes/Contractor.php';
+//require __DIR__.'/../vendor/autoload.php';
 
 class ContractorTest extends PHPUnit_Framework_TestCase
 {
