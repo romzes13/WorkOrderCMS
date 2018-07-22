@@ -45,6 +45,23 @@ class Database {
       //  echo "<h4>New record has been added: ".$ins."</h4>";
 
 
+    }
+
+
+    // Insert and return last inserted id
+    public static function insertGetLastId($ins, $params = array()) {
+
+        $arrlength = count($params);
+
+        $stmt = self::con()->prepare($ins);
+        $stmt->execute($params);
+
+        // Confirmation about added record
+
+        echo "<h4>New record has been added: ".$ins."</h4>";
+
+        $last_id = $stmt->lastInsertId();
+        echo "last id = ".$last_id;
 
     }
 
