@@ -31,3 +31,8 @@ WorkOrder Content Managment System (CMS) is designed to manage and dispatch work
 
 #### New dashboard design
 ![Image Workorders](https://github.com/romzes13/WorkOrderCMS/blob/master/Screenshot%20from%202018-06-18%2013-53-24.png)
+
+#### Scheduling System(Calendar)
+![Image Calendar](https://github.com/romzes13/WorkOrderCMS/blob/master/Screenshot%20from%202018-07-28%2010-56-58.png)
+
+
