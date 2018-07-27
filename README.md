@@ -15,7 +15,7 @@ WorkOrder Content Managment System (CMS) is designed to manage and dispatch work
 - [ ] Include PHP tests
 - [ ] New user friendly design needed
 - [ ] Implement payment system
-- [ ] Scheduling system
+- [x] Scheduling system
 - [ ] Location map
 - [ ] Web responsive design
 - [ ] Work order progress bar, displays created->dispatched->accepted->scheduled->compleated
