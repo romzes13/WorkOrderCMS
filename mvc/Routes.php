@@ -266,12 +266,64 @@ Route::set('test22', function() {
 
 });
 
+///////////////////////////////////////////////////
+
+//////// Calendar/Scheduling //////////////////////
+
+Route::set('calendar', function() {
+
+    ContractorImpl::CreateView('Calendar/calendar');
+
+});
+
+// Test calendar generator
+Route::set('test-calendar', function() {
+
+    ContractorImpl::CreateView('Calendar/TestCalendar');
+
+});
+
+// Test calendar generator
+Route::set('schedule', function() {
+
+    ContractorImpl::CreateView('Calendar/schedule');
+
+});
+
+// Test calendar generator
+Route::set('test-schedule', function() {
+
+    ContractorImpl::CreateView('Calendar/testSchedule');
+
+});
+
+// Calendar with prev and next month
+
+Route::set('schedule1', function() {
+
+    //session_start();
+    ContractorImpl::CreateView('Calendar/schedule');
+    //WorkorderImpl::acceptWorkorderById($_SESSION['contractor_id'], $_GET['id']);
+
+});
+
+///////////////////////////////////////////////////////
 
 
+////////   Maps   /////////////////////////////////////
 
+Route::set('map', function() {
 
+    ContractorImpl::CreateView('Map/test');
 
+});
 
+Route::set('map1', function() {
 
+    ContractorImpl::CreateView('Map/test1');
+
+});
+
+//////////////////////////////////////////////////////////////////
 
 ?>
