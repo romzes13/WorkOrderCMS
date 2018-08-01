@@ -8,11 +8,13 @@ class Notification
     public $workorder_id ='';
     public $dispatcher_id = '';
     public $work_description = '';
+    public $lastId = '';
+
 
     protected $_observers = array();
 
 
-    public function __construct($title, $work_description, $contractor_id, $workorder_id, $dispatcher_id)
+    public function __construct($title, $work_description, $contractor_id, $workorder_id, $dispatcher_id, $lastId)
     {
         //echo "Inside of Notification";
         $this->title = $title;
@@ -20,6 +22,8 @@ class Notification
         $this->contractor_id = $contractor_id;
         $this->workorder_id = $workorder_id;
         $this->dispatcher_id = $dispatcher_id;
+        $this->lastId = $lastId;
+
     }
 
 
