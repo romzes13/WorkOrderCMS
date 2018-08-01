@@ -192,6 +192,13 @@ Route::set('listWorkorders1', function() {
 
 });
 
+// Display Only Company work orders
+Route::set('companyWorkorders', function() {
+
+    WorkorderImpl::CreateView('CompanyWorkorders');
+
+});
+
 // Basic authentication
 Route::set('login', function() {
 
