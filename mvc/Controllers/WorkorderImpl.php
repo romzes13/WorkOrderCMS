@@ -27,17 +27,22 @@ class WorkorderImpl extends Controller {
 
       $sql ="INSERT INTO received_wo (dispatcher_id, workorder_id, contractor_id) VALUES ('$dispatcherId', '$workorder_id', '$contractor_id')";
 
-        self::insert($sql);
+        // This works fine
+        //self::insert($sql);
+
+        // This returns last inserted id
+        $lastId = self::insertGetLastId($sql);
+
 
         // Notify(update) client and dispatcher
-        WorkorderImpl::notifyObserver($contractor_id, $workorder_id, $dispatcherId);
+        WorkorderImpl::notifyObserver($contractor_id, $workorder_id, $dispatcherId, $lastId);
 
     }
 
 
     // Notify client and dispatcher that work order has been accepted
     // Observer pattern
-    public static function notifyObserver($contractor_id, $workorder_id, $dispatcherId)
+    public static function notifyObserver($contractor_id, $workorder_id, $dispatcherId, $lastId)
     {
 
         //Get contractors name
@@ -81,7 +86,7 @@ class WorkorderImpl extends Controller {
 
         include './classes/Observer/Notification.php';
 
-        $notification = new Notification($title, $workorder->description, $contrName, $workorder->id, $dispatcherId);
+        $notification = new Notification($title, $workorder->description, $contrName, $workorder->id, $dispatcherId, $lastId);
 
         include './classes/Observer/AcceptedWONotifyObserver.php';
 
@@ -165,14 +170,17 @@ $sql ="INSERT INTO workorder (description, estimate, location, received,
 
     }
 
-      public static function addWorkorder1($description, $location, $received) {
+
+    // Adds new workorder
+    public static function addWorkorder1($description, $location_id, $received) {
         // temporary solution for location TODO
-        $location_id = 1;
+        //$location_id = 1;
 
 $sql ="INSERT INTO workorder (description, location, received, location_id) VALUES ('$description', '$location', '$received', '$location_id')";
 
         self::insert($sql);
     }
+
 
     // Find workorder by id
     public static function findWorkorderById($id) {
@@ -185,6 +193,30 @@ $sql ="INSERT INTO workorder (description, location, received, location_id) VALU
 
             return $workorder;
     }
+
+    }
+
+    // Displays all workorders submitted by the company
+    // $id is the company id
+    public static function listWorkorderByCompany($id) {
+
+        $sql = "SELECT	wo.*
+            FROM	workorder wo
+                INNER JOIN
+		          (SELECT	*
+		              FROM	location
+		              WHERE	company_id = '$id') cc
+                    ON	wo.location_id = cc.id";
+
+  /*
+    foreach( $data as $row ) {
+
+       $workorder = new Workorder($row['id'],$row['description'], $row['estimate'], $row['location'], $row['received'], $row['scheduled'], $row['compleated'], $row['location_id']);
+
+            return $workorder;
+    }
+    */
+        return (self::query($sql));
 
     }
 
