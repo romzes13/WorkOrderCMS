@@ -89,6 +89,23 @@ return  document.write("<b>" +month + "/" + day + "/" + year + "</b>");
 }
 ?>
 
+   <?php
+
+        echo "Session id: ".$_SESSION['id']."<br>";
+        //include '../mvc/Client/Client.php';
+        include 'Client/Client.php';
+
+    /*    foreach( $locations as $row ) {
+
+            echo "Id: ".$row['id']."<br>";
+            echo "Name: ".$row['name']."<br>";
+            echo "Address: ".$row['address']."<br>";
+
+            }
+      */
+
+    ?>
+
         <h4>* Required fields</h4>
 
     <!-- Form for Help -->
@@ -98,9 +115,26 @@ return  document.write("<b>" +month + "/" + day + "/" + year + "</b>");
 <fieldset>
     <legend>New service request</legend>
 
+    <label id="label1">LocationId</label>
+    <input type="text" name="locationId" value="<?php echo $manager->locationId; ?>"><br>
 
     <label id="label1">Location</label>
-    <input type="text" name="location"><h8 id="errorLocation" class="error"></h8><br/>
+    <select id="custom" name="location" >
+      <option selected="<?php echo $manager->locationId; ?>"><?php echo $manager->locationId; ?></option>
+
+        <?php
+         foreach( $locations as $row ) {
+
+            echo "<option value=".$row['id']." >".$row['name'].": ".$row['address']."</option>";
+
+            }
+    ?>
+
+  </select>
+    <br>
+
+    <label id="label1">Location</label>
+    <input type="text" name="location1" value="<?php echo $manager->name; ?>"><h8 id="errorLocation" class="error"></h8><br/>
 
     <label id="label1"> Date:</label>
     <input type="date" name="received"><h8 id="date" name="date" class="error">*
