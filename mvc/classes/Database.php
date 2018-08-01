@@ -8,10 +8,12 @@ class Database {
     public static $userName = "root";
     public static $password = "1982";
 
+
   private static function con() {
 
     $pdo = new PDO("mysql:host=".self::$host.";dbname=".self::$dbName.";charset=utf8", self::$userName, self::$password);
-    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    //$pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES,TRUE);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     return $pdo;
   }
@@ -51,18 +53,18 @@ class Database {
     // Insert and return last inserted id
     public static function insertGetLastId($ins, $params = array()) {
 
+       // self::con()->setAttribute(PDO::ATTR_EMULATE_PREPARES,TRUE);
         $arrlength = count($params);
 
-        $stmt = self::con()->prepare($ins);
+        $pdo = self::con();
+        $stmt = $pdo->prepare($ins);
         $stmt->execute($params);
 
         // Confirmation about added record
+        $last_id = $pdo->lastInsertId();
+        echo "New record created successfully. Last inserted ID is: " . $last_id."<br>";
 
-        echo "<h4>New record has been added: ".$ins."</h4>";
-
-        $last_id = $stmt->lastInsertId();
-        echo "last id = ".$last_id;
-
+        return $last_id;
     }
 
         public static function delete($ins, $params = array()) {

@@ -61,7 +61,15 @@
     include 'Contractor/AcceptedWorkorders.php';
     echo "<br>";
     include 'Contractor/ListWorkorders.php';
-}
+}   else
+    if($_SESSION['role'] == "client") {
+
+        include 'Client/DisplayCompanyInfo.php';
+        echo "<br>";
+
+        include 'Client/ListLocations.php';
+        echo "<br>";
+    }
 ?>
 
 
