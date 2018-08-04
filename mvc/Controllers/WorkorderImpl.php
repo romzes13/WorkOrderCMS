@@ -8,6 +8,22 @@ class WorkorderImpl extends Controller {
 
     }
 
+
+    /*
+    *   List of workorders that hasn't been accepted yet
+    *   and compleated.
+    *
+    */
+     public static function listNotAceptedWorkorders() {
+
+        return (self::query("SELECT  wo.*
+        FROM	workorder wo
+        LEFT JOIN received_wo rw
+        ON	wo.id = rw.workorder_id
+        WHERE 	rw.workorder_id IS NULL"));
+
+    }
+
         // Finish it TODO
         public static function contractorWorkordersById($id) {
 
@@ -130,6 +146,20 @@ class WorkorderImpl extends Controller {
 	        WHERE received_wo.workorder_id = workorder.id
             AND		contractor_id = contractor.id
             AND	    contractor_id = '$contractor_id';";
+
+       return (self::query($sql));
+
+    }
+
+        // Displays accepted and scheduled workorders
+        public static function scheduledWorkorders($contractor_id) {
+
+            $sql = "SELECT  workorder.*
+            FROM received_wo, workorder, contractor
+	       WHERE workorder_id = workorder.id
+            AND		contractor_id = contractor.id
+            AND		contractor_id = '$contractor_id'
+            AND		workorder.scheduled IS NOT NULL;";
 
        return (self::query($sql));
 
