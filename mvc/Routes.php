@@ -262,7 +262,7 @@ Route::set('contractors', function() {
 
 
 
-//////// Observer //////////////////////
+//////// Observer and Notifications //////////////////////
 
 // Notify client and dispatcher if contractor accepted a workorder
 //  or scheduled a visit date.
@@ -272,6 +272,14 @@ Route::set('test22', function() {
     ContractorImpl::CreateView('Contractor/ObserverWorkorders');
 
 });
+
+// Display Only Company work orders
+Route::set('notifications', function() {
+
+    NotificationImpl::CreateView('CompanyNotifications');
+
+});
+
 
 ///////////////////////////////////////////////////
 
