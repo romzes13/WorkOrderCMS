@@ -74,6 +74,16 @@ $data = self::query("SELECT * FROM users WHERE name='$name' AND password='$passw
 
     }
 
+     // Returns all users Ordered by name and role
+    public static function listUsersOrdered() {
+        // Displays all users ordered by name and role
+        return (self::query("
+            SELECT	*
+            FROM	users us
+            ORDER BY  us.role, us.name"));
+
+    }
+
     // Returns all users
     public static function deleteUser($id) {
 

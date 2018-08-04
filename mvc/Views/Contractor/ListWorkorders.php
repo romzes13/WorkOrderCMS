@@ -1,7 +1,7 @@
 <p>List of available workorders in the system, where a contractor may accept service calls.</p>
 
         <table>
-        <caption>List of all workorders</caption>
+        <caption>List of workorders that hasn't been accepted yet.</caption>
             <tr>
                 <th>Id</th>
                 <th>Description</th>
@@ -14,7 +14,11 @@
                 <th>Accept?</th>
             </tr>
   <?php
-            $data = WorkorderImpl::listWorkorders();
+            // Returns all workorders
+            //$data = WorkorderImpl::listWorkorders();
+
+            // Returns workorders that hasn't been accepted yet.
+            $data = WorkorderImpl::listNotAceptedWorkorders();
 
             foreach( $data as $row ) {
 

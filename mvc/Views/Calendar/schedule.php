@@ -96,7 +96,12 @@ $blank = date('w', strtotime("{$year}-{$month}-01"));
 
  $workorders = array();
 
- $data = WorkorderImpl::acceptedWorkorders($_SESSION['contractor_id']);
+
+ // Returns all accepted workorders
+ //$data = WorkorderImpl::acceptedWorkorders($_SESSION['contractor_id']);
+
+// Returns all scheduled workorders
+$data = WorkorderImpl::scheduledWorkorders($_SESSION['contractor_id']);
 
     foreach( $data as $row ) {
 
