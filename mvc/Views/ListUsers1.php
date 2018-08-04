@@ -31,7 +31,11 @@
                 <th>Delete</th>
             </tr>
   <?php
-            $data = UserImpl::listUsers();
+            // Returns all users unordered
+            //$data = UserImpl::listUsers();
+
+            // Returns ordered list of users by role and name
+            $data = UserImpl::listUsersOrdered();
 
             foreach( $data as $row ) {
 
