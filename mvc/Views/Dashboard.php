@@ -67,6 +67,9 @@
         include 'Client/DisplayCompanyInfo.php';
         echo "<br>";
 
+        include 'Location/DisplayLocation.php';
+        echo "<br>";
+
         include 'Client/ListLocations.php';
         echo "<br>";
     }

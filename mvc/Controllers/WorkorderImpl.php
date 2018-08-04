@@ -250,6 +250,24 @@ $sql ="INSERT INTO workorder (description, location, received, location_id) VALU
 
     }
 
+    // Displays all workorders at the current location
+    // based on user's id
+    public static function listWorkordersAtLocation($userId) {
+
+        $sql = "SELECT	wo.*
+        FROM	workorder wo
+	       INNER JOIN location lc
+		  ON	wo.location_id = lc.id
+        INNER JOIN manager
+		ON	manager.location_id = lc.id
+	   INNER JOIN users
+		ON	users.id = manager.users_id
+        AND	users_id = '$userId';";
+
+        return (self::query($sql));
+
+    }
+
 
     // Update workorder information
     public static function updateWorkorderById($id, $description, $location, $received) {

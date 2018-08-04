@@ -19,6 +19,11 @@
 <main>
        <h1>Workorders::</h1>
 
+    <h4>Workorders at the current location</h4>
+    <?php      include 'Client/ListWorkordersAtLocation.php'; ?>
+
+    <br>
+    <h4>All workorders from the company</h4>
         <?php      include 'Client/ListCompanyWorkorders.php'; ?>
 
 

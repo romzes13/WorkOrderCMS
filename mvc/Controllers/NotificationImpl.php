@@ -39,6 +39,34 @@ class NotificationImpl extends Controller {
         return $data;
     }
 
+     # Final result
+     # Select all active notifications for current location
+     # based on the manager's user id.
+     public static function listActiveNotificationsAtLocation($userId) {
+
+        // Select all active notifications for the company
+        $data = self::query("
+            SELECT	nt.*
+            FROM	notifications nt
+            INNER JOIN
+		(SELECT	wo.id
+		FROM	workorder wo
+		INNER JOIN
+		(SELECT location.id
+		FROM location, users, manager
+		WHERE	users.id = manager.users_id
+		AND	users.id = '$userId'
+		AND	location.id	= manager.location_id) cc
+        ON	wo.location_id = cc.id) cw
+        ON	cw.id = nt.received_wo
+        WHERE	active='yes'
+        ORDER BY nt.received_wo, nt.upd_date;");
+
+        return $data;
+    }
+
+
+
      // Returns all notifications from database
     public static function listActiveNotif() {
 

@@ -19,8 +19,11 @@
 <main>
        <h1>Notifications::</h1>
 
-        <?php      include 'Client/activeNotifications.php'; ?>
-
+    <h4>Notifications at the current location</h4>
+        <?php      include 'Client/activeLocationNotifications.php'; ?>
+    <br>
+    <h4>Company's notifications</h4>
+    <?php      include 'Client/activeNotifications.php'; ?>
 
 <?php      include 'footer.php'; ?>
 </main>
