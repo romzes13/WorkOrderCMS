@@ -13,6 +13,32 @@ class NotificationImpl extends Controller {
         return $data;
     }
 
+
+    // Returns all active notifications from database
+    // for selected company
+    // TODO: add new table, where notificaton can be set
+    // as seen or not seen, urgent=>send text message to cell.
+    public static function listActiveCompanyNotifications($companyId) {
+
+        // Select all active notifications for the company
+        $data = self::query("
+            SELECT	nt.*
+            FROM	notifications nt
+            INNER JOIN
+		  (SELECT	wo.id
+		FROM	workorder wo
+		INNER JOIN
+		(SELECT	*
+		FROM	location
+		WHERE	company_id = '$companyId') cc
+        ON	wo.location_id = cc.id) cw
+        ON	cw.id = nt.received_wo
+        WHERE	active='yes'
+        ORDER BY nt.received_wo, nt.upd_date;");
+
+        return $data;
+    }
+
      // Returns all notifications from database
     public static function listActiveNotif() {
 
