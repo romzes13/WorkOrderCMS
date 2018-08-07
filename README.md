@@ -1,4 +1,4 @@
-<p align="center"><img src="logo/logotype_horizontal.png" alt="WorkOrderCMS" height="100px"></p>
+<p align="left"><img src="logo/logotype_horizontal.png" alt="WorkOrderCMS" height="100px"></p>
 
 
 # WorkOrder CMS
