@@ -1,4 +1,6 @@
-![Image Logo](https://github.com/romzes13/WorkOrderCMS/blob/master/Logo.png)
+<p align="center"><img src="logo/logotype_horizontal.png" alt="WorkOrderCMS" height="100px"></p>
+
+
 # WorkOrder CMS
 [![Build Status](https://travis-ci.com/romzes13/WorkOrderCMS.svg?branch=master)](https://travis-ci.com/romzes13/WorkOrderCMS)
 
