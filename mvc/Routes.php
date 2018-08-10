@@ -341,4 +341,27 @@ Route::set('map1', function() {
 
 //////////////////////////////////////////////////////////////////
 
+
+////////   New Design   /////////////////////////////////////
+
+Route::set('newDesign', function() {
+
+    ContractorImpl::CreateView('newDesign');
+
+});
+
+Route::set('newDashboard', function() {
+
+    ContractorImpl::CreateView('newDashboard');
+
+});
+
+//////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
 ?>
