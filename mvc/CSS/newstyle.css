@@ -1,0 +1,319 @@
+ /* CSS file by Roman Babushkin */
+
+#wrapper { /* margin-left: auto;
+            margin-right: auto;
+            width: 80%;     */
+            font-family: Arial, sans-serif;
+         }
+
+body {     background-color:aliceblue;
+           /* color:darkorange; aliceblue */
+    }
+
+h2 {
+        font-family: Arial, sans-serif;
+        text-align: left;
+    }
+/**************   Columns     ****************/
+/* Create two unequal columns that floats next to each other */
+
+/* Left column */
+.leftcolumn {
+    float: left;
+    width: 65%;
+}
+
+/* Right column */
+.rightcolumn {
+    float: left;
+    width: 34%;
+    background-color: #f1f1f1;
+   /* padding-left: 15px; */
+}
+/**************   Content     ****************/
+
+.m_cont {
+   /* display: block; */
+    /* background-color: lightgrey; */
+    background-color: rgba(229, 229, 229, 0.54);
+  /*  width: 400px; */
+   /* width: 100%; */
+ /*   border: 25px solid green; */
+   padding: 15px;
+   /* margin: 15px; */
+    margin-top: 15px;
+    margin-left: 0;
+   /* margin-right: 15px; */
+   /* float: left; */
+
+}
+
+.m_cont h3 {
+                   margin-top: 0;
+                   margin-bottom: 0;
+                   float: left;
+
+
+                }
+
+
+
+.cont_right {
+   /* display: block;  */
+    background-color: rgba(229, 229, 229, 0.54);
+   /* width: 100%; */
+ /*   border: 25px solid green; */
+    padding: 15px;
+
+    margin-top: 15px;
+    margin-right: 0;
+    margin-left: 0px;
+   /* float: right; */
+   /* float: left;*/
+
+
+}
+
+.cont_right h3 {
+                   margin-top: 0;
+                   margin-bottom: 0;
+                   text-align: left;
+
+
+                }
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid #000000;
+    margin: 1em 0;
+    margin-top: 3px;
+    padding: 0;
+}
+
+.clear_f {
+    clear: both;
+}
+
+
+/**************   Dashboard     ****************/
+
+.dashb  {
+            font-weight: bold;
+      /*      background-color: #6da9ef;    */
+            background-color: #1f5d82;
+            color: aliceblue;
+            padding: 15px;
+        }
+
+.dashb1  {
+            height: 50px;
+            font-weight: bold;
+     /*     background-color: #dbe6f2;  */
+            color: #000000;
+            padding: 1px;
+            background: linear-gradient(to bottom,  aliceblue 0%,rgba(212, 209, 209, 0.64) 100%);
+        }
+
+/**************   Navigation    ****************/
+
+nav {
+        /*display: block;   */
+	    font-weight: bold;
+    	background-color: #1f5d82;
+        font-family: Arial, sans-serif;
+}
+
+nav a {
+
+	text-decoration: none;
+	padding: 20px;
+	display: block;
+    color: aliceblue;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background-color: #498eb7;
+
+}
+
+nav ul {
+
+        height: 40px;
+    	list-style-type: none;
+    	margin: 0;
+        padding: 0;
+       	overflow: hidden;
+    /*	background-color: #blue;     */
+
+        }
+
+nav ul a {
+
+    	text-decoration: none;
+        }
+
+nav a:hover {
+
+	    color: black;
+        background-color: aliceblue;
+    }
+
+nav .act {
+
+	    color: black;
+        background-color: aliceblue;
+    }
+
+
+li {
+
+/*	margin-left: 10px;   */
+/*	margin-right: auto;  */
+    float: left;
+}
+
+/* Add a gray right border to all list items, except the last item (last-child) */
+li {
+
+    border-right: 4px solid #1f5d82;
+}
+
+li:last-child {
+
+    border-right: none;
+}
+
+li a {
+        display: block;
+    	text-align: center;
+    	padding: 11px 11px;
+    	text-decoration: none;
+}
+
+
+
+/* Footer       */
+
+footer {text-align: center}
+
+table { margin: auto;
+        border: 5px solid #a4bde5;
+        width:  100%;
+        border-spacing: 0; }
+
+td, th { padding: 0.5em;
+         border-style: none;
+         font-family: Arial, sans-serif; }
+
+caption { font-family: Verdana, sans-serif;
+          font-weight: bold;
+          font-size: 1.2em;
+          padding-bottom: 0.5em; }
+
+tr:nth-of-type(even) {background-color: beige }
+
+tr:first-of-type { background-color: #a4bde5;
+                   color: #eaeaea; }
+
+cite { float: right;}
+
+blockquote { text-align: center;}
+
+
+p   { font-family: "Times New Roman", serif;
+        text-indent: 3em;
+        font-size: 1.1em;
+    }
+
+/* Form display settings */
+
+form    { background-color: lightgrey;
+          font-family: Arial, sans-serif;
+          padding: 10px;
+          width: 500px;
+
+           }
+
+fieldset {  width: 400px;
+            border: 2px ridge #ddd0d0;
+            padding: 10px;
+            margin-bottom: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            }
+
+legend  { font-family: Georgia, "Times New Roman", serif;
+          font-weight: bold; }
+
+#label1   { font-family: Arial, sans-serif;
+          float: left;
+          width: 65px;
+          clear: left;
+          text-align: left;
+          padding-right: 20px;
+          margin-top: 7px;
+          padding-left: 5px; }
+
+input, textarea { margin-top: 5px;
+                  padding-left: 10px;
+                  margin-left: 10px;
+                }
+
+.error {    font-family: Arial, sans-serif;
+            font-style: italic;
+            font-size: .90em;
+            color: #FF0000;
+            margin-left: 1.em;
+
+        }
+
+/* Custom settings   */
+
+#custom        {  margin-top: 5px;
+                  padding-left: 10px;
+                  margin-left: 10px;
+                }
+
+#custom1       {
+                  margin-left: 300px;
+                }
+
+#label00   {
+
+            font-family: Arial, sans-serif;
+            margin-top: 5px;
+            padding-left: 10px;
+            margin-left: 10px;
+            text-align: left;
+           }
+
+/* ============================
+                Mobile Responsiveness
+   ============================*/
+
+@media(max-width: 768px){
+
+  table, table td, table tr, table th {
+      display: block;
+      text-align: left;
+    }
+
+  table th, table td {
+      margin: 0;
+      padding-left: 25px;
+    }
+
+  table td  {
+      margin-left: 40px;
+      list-style: square;
+      display: list-item;
+      padding-left: 0;
+    }
+
+  table thead {
+      display: none;
+    }
+}
+
+
